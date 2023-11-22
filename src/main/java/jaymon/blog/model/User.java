@@ -1,11 +1,22 @@
 package jaymon.blog.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
+
+@Data
+@NoArgsConstructor //빈생성자
+@AllArgsConstructor //전체 생성자
+@Builder // 빌더패턴
+//@DynamicInsert // insert시에 null인 필드를 제외시켜 준다.
 @Entity
 public class User {
 
@@ -22,8 +33,8 @@ public class User {
     @Column(nullable = false, length = 50)
     private String email;
 
-    @ColumnDefault("'user'")
-    private String role; //Enum 으로 교체 예정
+    @Enumerated(EnumType.STRING)
+    private RoleType role;
 
     @CreationTimestamp // 시간 자동 입력
     private Timestamp createDate;
