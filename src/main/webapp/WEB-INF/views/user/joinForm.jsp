@@ -87,6 +87,6 @@
             <div id="yt_article_summary_close_button" class="yt_article_summary_close_button">×</div>
         </div></body>
 
-<script src="/blog/js/user.js"></script>
+<script src="/js/user.js"></script>
 <%@ include file = "../layout/footer.jsp" %>
 

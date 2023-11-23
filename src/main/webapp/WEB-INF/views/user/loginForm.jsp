@@ -71,7 +71,7 @@
         </div>
         <p class="mt-5 mb-3 text-body-secondary">© 2017–2023</p>
       </form>
-        <button class="btn btn-primary w-100 py-2" id = "btn-login">로그인</button>
+    <button class="btn btn-primary w-100 py-2" id= "btn-login">로그인</button>
 
     </main>
     <script src="/blog/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
@@ -90,6 +90,6 @@
             <div id="yt_article_summary_close_button" class="yt_article_summary_close_button">×</div>
         </div></body>
 
-<script src="/blog/js/user.js"></script>
+<script src="/js/user.js"></script>
 <%@ include file = "../layout/footer.jsp" %>
 

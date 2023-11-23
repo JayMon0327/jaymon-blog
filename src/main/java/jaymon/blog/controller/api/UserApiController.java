@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
+
 @RestController
 @RequiredArgsConstructor
 public class UserApiController {
@@ -24,11 +26,17 @@ public class UserApiController {
         return new ResponseDto<Integer>(HttpStatus.OK.value(),1); // 자바오브젝트를 JSON으로 변환해서 리턴
     }
 
-    @PostMapping("/blog/api/user/login")
-    public ResponseDto<Integer> login(@RequestBody User user) {
-        System.out.println("login호출됨");
-        userService.로그인(user); //principal = 접근주체
-        return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
 
-    }
+
+//    @PostMapping("/api/user/login")
+//    public ResponseDto<Integer> login(@RequestBody User user, HttpSession session) {
+//        System.out.println("login호출됨");
+//        User principal = userService.로그인(user);//principal = 접근주체
+//
+//        if (principal != null) {
+//            session.setAttribute("principal", principal);
+//        }
+//        return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
+//
+//    }
 }
