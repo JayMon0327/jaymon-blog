@@ -4,20 +4,15 @@ import jaymon.blog.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.Optional;
+
 //자동으로 bean등록이 된다.
 //@Repository 생략 가능하다.
 public interface UserRepository extends JpaRepository<User, Integer> {
+    // SELECT * FROM user WHERE username= ?;
+    Optional<User> findByUsername(String username);
 
-
-
-
-
-
-
-
-
-
-
+}
 
     //쿼리 메소드 생성전략
     // SELECT * FROM user WHERE username = ?1 AND password = ?2;
@@ -27,4 +22,3 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 //    @Query(value = "SELECT * FROM user WHERE username = ?1 AND password = ?2;", nativeQuery = true)
 //    User login(String username, String password);
 
-}
