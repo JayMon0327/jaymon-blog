@@ -8,9 +8,20 @@ import org.springframework.data.jpa.repository.Query;
 //@Repository 생략 가능하다.
 public interface UserRepository extends JpaRepository<User, Integer> {
 
+
+
+
+
+
+
+
+
+
+
+
     //쿼리 메소드 생성전략
     // SELECT * FROM user WHERE username = ?1 AND password = ?2;
-    User findByUsernameAndPassword(String username, String password);
+//    User findByUsernameAndPassword(String username, String password);
 
     //네이티브 쿼리 전략
 //    @Query(value = "SELECT * FROM user WHERE username = ?1 AND password = ?2;", nativeQuery = true)
