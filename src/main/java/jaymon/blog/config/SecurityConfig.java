@@ -50,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 //    @Bean
-//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception { //WebSecurityConfigurerAdapter 없이
 //        http
 //            .csrf().disable() //csrf 토큰 비활성화
 //            .authorizeHttpRequests()//요청이 들어오면

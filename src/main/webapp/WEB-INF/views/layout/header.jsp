@@ -15,7 +15,12 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script src="/js/summernote/summernote-lite.js"></script>
+        <script src="/js/summernote/lang/summernote-ko-KR.js"></script>
+        <link rel="stylesheet" href="/css/summernote/summernote-lite.css">
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <title>Title</title>
 </head>
@@ -40,8 +45,8 @@
             <c:otherwise>
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                           <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
-                          <li><a href="/board/Form" class="nav-link px-2 text-white">글쓰기</a></li>
-                          <li><a href="/user/form" class="nav-link px-2 text-white">회원정보</a></li>
+                          <li><a href="/board/saveForm" class="nav-link px-2 text-white">글쓰기</a></li>
+                          <li><a href="/user/updateForm" class="nav-link px-2 text-white">회원정보</a></li>
                           <li><a href="/logout" class="nav-link px-2 text-white">로그아웃</a></li>
                           <li><a href="#" class="nav-link px-2 text-white">About</a></li>
                         </ul>
