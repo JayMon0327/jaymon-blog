@@ -1,5 +1,7 @@
 package jaymon.blog.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -36,8 +38,10 @@ public class Board {
     private User user;
 
     // 게시판을 열었을 때 댓글도 같이 보이도록 처음부터 데이터를 가져온다 = EAGER
-    @OneToMany(mappedBy = "board", fetch = FetchType.EAGER) // mappedBy = 난 FK가 아니에요. DB에 컬럼 만들지 마세요.
-    private List<Reply> reply;
+    @OneToMany(mappedBy = "board", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE) // mappedBy = 난 FK가 아니에요. DB에 컬럼 만들지 마세요.
+    @JsonIgnoreProperties({"board"}) //무한 참조 방지 - 다이렉트론 괜찮지만, Board를 호출했을 때 이 필드를 참조한다면 가져오지 않을 필드 설정
+    @OrderBy("id desc")
+    private List<Reply> replys;
 
     @CreationTimestamp
     private Timestamp createDate;

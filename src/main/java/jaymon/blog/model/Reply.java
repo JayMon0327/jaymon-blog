@@ -1,10 +1,18 @@
 package jaymon.blog.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Reply {
 
@@ -25,4 +33,5 @@ public class Reply {
 
     @CreationTimestamp
     private Timestamp createDate;
+
 }
