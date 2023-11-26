@@ -24,7 +24,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(nullable = false, length = 30, unique = true)
+    @Column(nullable = false, length = 50, unique = true)
     private String username; // 아이디
 
     @Column(nullable = false, length = 100) // 해쉬
@@ -35,6 +35,9 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private RoleType role;
+
+    //oauth 사용자 구분
+    private String oauth; //kakao, google 같은 값이 들어감
 
     @CreationTimestamp // 시간 자동 입력
     private Timestamp createDate;

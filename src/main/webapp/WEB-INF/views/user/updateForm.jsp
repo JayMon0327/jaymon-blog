@@ -13,18 +13,20 @@
           id="username" placeholder="username" readonly>
         </div>
 
+        <c:if test="${empty principal.user.oauth}">
         <div class="form-floating">
           <label for="password">password</label>
           <input type="password" class="form-control"
           id="password" placeholder="password">
         </div>
+        </c:if>
 
         <div class="form-floating">
           <label for="email">Email</label>
-          <input type="email" value="${principal.user.email}" class="form-control" id="email" placeholder="Enter email">
+          <input type="email" value="${principal.user.email}" class="form-control" id="email" placeholder="Enter email" readonly>
         </div>
 
-        <p class="mt-5 mb-3 text-body-secondary">© 2017–2023</p>
+
       </form>
         <button class="btn btn-primary w-100 py-2" id="btn-update">수정완료</button>
 
