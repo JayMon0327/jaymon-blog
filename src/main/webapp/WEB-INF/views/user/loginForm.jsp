@@ -2,23 +2,24 @@
 
 <%@ include file = "../layout/header.jsp" %>
 
-    <main class="form-signin w-100 m-auto">
-      <form action="/auth/loginProc" method="post">
-        <h1 class="h3 mb-3 fw-normal">로그인</h1>
+    <div class="container">
+    	<form action="/auth/loginProc" method="post">
+    		<div class="form-group">
+    			<label for="username">Username</label>
+    			<input type="text" name="username" class="form-control" placeholder="Enter username" id="username">
+    		</div>
 
-        <div class="form-floating">
-          <input type="username" name="username" class="form-control" id="username" placeholder="username">
-          <label for="username">Username</label>
-        </div>
+    		<div class="form-group">
+    			<label for="password">Password</label>
+    			<input type="password" name="password" class="form-control" placeholder="Enter password" id="password">
+    		</div>
 
-        <div class="form-floating">
-          <input type="password" name="password" class="form-control" id="password" placeholder="password">
-          <label for="password">password</label>
-        </div>
+    		<button id="btn-login" class="btn btn-primary">로그인</button>
+    		<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=a7aea7d8b04ee942a290d876b662eb62&redirect_uri=http://localhost:8080/auth/kakao/callback">
+    		<img height="38px" src="/image/kakao_login_button.png" /></a>
+    	</form>
 
-        <button class="btn btn-primary w-100 py-2" id= "btn-login">로그인</button>
-      </form>
-    </main>
+    </div>
 
 <%@ include file = "../layout/footer.jsp" %>
 
